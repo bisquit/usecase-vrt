@@ -1,0 +1,24 @@
+{
+  "name": "usecase-vrt",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.21.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "reg-keygen-git-hash-plugin": "^0.11.1",
+    "reg-notify-github-plugin": "^0.11.1",
+    "reg-publish-s3-plugin": "^0.11.0",
+    "reg-suit": "^0.11.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.2",
+    "vue-tsc": "^0.29.8"
+  }
+}
