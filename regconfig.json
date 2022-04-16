@@ -16,7 +16,7 @@
       "clientId": "M7EwMjK3MDQ20i8tTk1OLE7VLSsq0TcysbQ0sjA31E/KLC4szSwBAA=="
     },
     "reg-publish-s3-plugin": {
-      "bucketName": "your_s3_bucket_name"
+      "bucketName": "vrt-snapshots"
     }
   }
 }
