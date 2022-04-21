@@ -81,7 +81,7 @@ jobs:
           path: screenshots
       - name: workaround for detached HEAD
         env:
-          CHECKOUT_REF: ${{ (github.event_name == 'pull_request' && github.head_ref) || github.ref }}
+          CHECKOUT_REF: ${{ (github.event_name == 'pull_request' && github.head_ref) || github.ref_name }}
         run: |
           git checkout ${CHECKOUT_REF} || git checkout -b ${CHECKOUT_REF}
       # - name: workaround for detached HEAD
