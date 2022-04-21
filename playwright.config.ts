@@ -2,6 +2,7 @@
 import { PlaywrightTestConfig } from '@playwright/test';
 
 const config: PlaywrightTestConfig = {
+  testDir: 'tests/e2e',
   webServer: {
     command: 'yarn dev',
     url: 'http://localhost:3000/',
