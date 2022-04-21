@@ -80,7 +80,7 @@ jobs:
           path: screenshots
       - name: workaround for detached HEAD
         run: |
-          git checkout -b ${GITHUB_REF#refs/heads/}
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/}
       # - name: workaround for detached HEAD
       #   env:
       #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
