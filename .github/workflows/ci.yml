@@ -54,7 +54,9 @@ jobs:
           name: screenshots
           path: screenshots
       - name: Run visual regression test
-        run: yarn reg
+        run: |
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull
+          yarn reg
 
   danger:
     runs-on: ubuntu-latest
