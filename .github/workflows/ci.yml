@@ -27,6 +27,25 @@ jobs:
       - name: install
         run: yarn --frozen-lockfile
 
+  test:
+    runs-on: ubuntu-latest
+    needs:
+      - setup
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+      - name: cache node_modules
+        id: node_modules_cache_id
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+          key: node-v${{ env.NODE_VERSION }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
+      - name: Run jest
+        run: yarn test
+
   e2e:
     runs-on: ubuntu-latest
     needs:
