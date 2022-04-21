@@ -80,8 +80,10 @@ jobs:
           name: screenshots
           path: screenshots
       - name: workaround for detached HEAD
+        env:
+          CHECKOUT_REF: ${{ (github.event_name == 'pull_request' && github.head_ref) || github.ref }}
         run: |
-          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/}
+          git checkout ${CHECKOUT_REF} || git checkout -b ${CHECKOUT_REF}
       # - name: workaround for detached HEAD
       #   env:
       #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
