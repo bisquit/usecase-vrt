@@ -83,8 +83,7 @@ jobs:
         env:
           CHECKOUT_REF: ${{ (github.event_name == 'pull_request' && github.head_ref) || github.ref }}
         run: |
-          echo ${CHECKOUT_REF}
-          git checkout ${GITHUB_HEAD_REF} || git checkout -b ${GITHUB_HEAD_REF}
+          git checkout ${CHECKOUT_REF} || git checkout -b ${CHECKOUT_REF}
       # - name: workaround for detached HEAD
       #   env:
       #     AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
