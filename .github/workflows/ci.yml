@@ -55,10 +55,13 @@ jobs:
         with:
           name: screenshots
           path: screenshots
-      # - name: workaround for detached HEAD
-      #   run: |
-      #     git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull origin ${GITHUB_REF#refs/heads/}
+      - name: workaround for detached HEAD
+        run: |
+          git checkout ${GITHUB_REF#refs/heads/} || git checkout -b ${GITHUB_REF#refs/heads/} && git pull origin ${GITHUB_REF#refs/heads/}
       - name: Run visual regression test
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         run: |
           yarn reg
 
