@@ -11,6 +11,7 @@ const config: PlaywrightTestConfig = {
   use: {
     baseURL: 'http://localhost:3000/',
   },
+  reporter: process.env.CI ? 'github' : 'list',
 };
 
 export default config;
