@@ -43,8 +43,8 @@ jobs:
           path: |
             node_modules
           key: node-v${{ env.NODE_VERSION }}-deps-${{ hashFiles(format('{0}{1}', github.workspace, '/yarn.lock')) }}
-      - name: Install playwright dependencies
-        run: npx playwright install-deps chromium
+      - name: Install playwright browsers and dependencies
+        run: npx playwright install --with-deps chromium
       - name: Run playwright
         run: yarn e2e
 
