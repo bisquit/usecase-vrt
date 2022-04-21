@@ -6,6 +6,7 @@
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview",
+    "test": "jest",
     "e2e": "playwright test",
     "reg": "reg-suit run"
   },
@@ -14,9 +15,11 @@
   },
   "devDependencies": {
     "@playwright/test": "^1.21.0",
+    "@types/jest": "^27.4.1",
     "@vitejs/plugin-vue": "^2.3.1",
     "danger": "^11.0.2",
     "dotenv": "^16.0.0",
+    "jest": "^27.5.1",
     "reg-keygen-git-hash-plugin": "^0.11.1",
     "reg-notify-github-plugin": "^0.11.1",
     "reg-publish-s3-plugin": "^0.11.0",
